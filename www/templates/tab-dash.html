@@ -1,0 +1,38 @@
+
+<ion-view view-title="Dashboard">
+  <ion-content has-bouncing="false">
+    <ion-list>
+      <ion-item class="item" style="padding: 0;border-top: 0">
+        <div class="row tab-top">
+          <div class="col col-33 "
+               ng-class="slideIndex == 0  ? 'actived' : 'default'"
+               ng-click="activeSlide(0)">
+            <small>tabs1</small>
+          </div>
+          <div class="col col-33 "
+               ng-class="slideIndex == 1  ? 'actived' : 'default'"
+               ng-click="activeSlide(1)">
+            <small>tabs2</small>
+          </div>
+          <div class="col col-33 "
+               ng-class="slideIndex == 2  ? 'actived' : 'default'"
+               ng-click="activeSlide(2)">
+            <small>tabs3</small>
+          </div>
+        </div>
+      </ion-item>
+    </ion-list>
+    <ion-slide-box on-slide-changed="slideChanged(index)" active-slide="slideIndex" show-pager="false" style="height: 100%!important;">
+      <ion-slide style="height: 100%!important;">
+        第一个页面
+      </ion-slide>
+      <ion-slide>
+        第二个页面
+      </ion-slide>
+      <ion-slide>
+        第三个页面
+      </ion-slide>
+    </ion-slide-box>
+  </ion-content>
+</ion-view>
+
