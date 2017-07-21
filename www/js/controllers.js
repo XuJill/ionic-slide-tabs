@@ -1,15 +1,24 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope,$ionicSlideBoxDelegate) {
-  $scope.slideIndex=0;
-  // Called each time the slide changes
-  $scope.slideChanged = function(index) {
-    $scope.slideIndex = index;
-  };
-  $scope.activeSlide = function (index) {
-    $ionicSlideBoxDelegate.slide(index);
-  };
+.controller('DashCtrl', function($scope,$ionicSlideBoxDelegate,$ionicTabsDelegate) {
 
+
+  $scope.tabs=[
+    {name:'tabs1'},
+    {name:'tabs2'},
+    {name:'tabs3'},
+    {name:'tabs4'}
+  ];
+  $scope.slideChanged = function(index) {
+    $ionicTabsDelegate._instances[1].select(index);
+  };
+  $scope.selectedTab = function (index) {
+    $ionicSlideBoxDelegate.slide(index);
+
+  };
+  $scope.$on('$ionicView.afterEnter', function () {
+    $ionicTabsDelegate._instances[1].select($ionicSlideBoxDelegate.currentIndex());//默认选择tabs1
+  });
 })
 
 .controller('ChatsCtrl', function($scope, Chats) {
