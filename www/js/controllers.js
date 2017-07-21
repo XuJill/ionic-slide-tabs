@@ -2,7 +2,6 @@ angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope,$ionicSlideBoxDelegate,$ionicTabsDelegate) {
 
-
   $scope.tabs=[
     {name:'tabs1'},
     {name:'tabs2'},
@@ -10,7 +9,7 @@ angular.module('starter.controllers', [])
     {name:'tabs4'}
   ];
   $scope.slideChanged = function(index) {
-    $ionicTabsDelegate._instances[1].select(index);
+    $ionicTabsDelegate._instances[1].select(index);//slide索引改变tabs改变
   };
   $scope.selectedTab = function (index) {
     $ionicSlideBoxDelegate.slide(index);
